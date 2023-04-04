@@ -1,6 +1,6 @@
 # unsplice
 Removing slashes and newlines from a string, while using TDD.
-## Problem
+## Problem unfinished
 Given a string, strip all occurences of consecutively occuring backslash and newline characters. For example, assuming that:
 "\\" represents '\' and
 "\n" represents '\n'
