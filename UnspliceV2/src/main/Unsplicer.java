@@ -34,17 +34,28 @@ public class Unsplicer {
 	}
 	
 	public int resolveSlash(int indexOfSlash) {
+		
 		int j;
 		
 		for(j = indexOfSlash ; j < word.length(); j++) {
+			
 			if(word.charAt(j) == '\n') {
 				j++;
 				break;
 			}	
-			else if(Character.isAlphabetic(word.charAt(j))){
-				break;
+			else if(Character.isAlphabetic(word.charAt(j))) {
+				j++;
+				break;	
 			}
 		}
+		
 		return j;
 	}
+
+	public void storeFromTo(int i, int j) {
+		
+		
+	}
+	
+	
 }
