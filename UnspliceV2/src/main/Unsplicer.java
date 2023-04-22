@@ -44,17 +44,21 @@ public class Unsplicer {
 				break;
 			}	
 			else if(Character.isAlphabetic(word.charAt(j))) {
+				storeFromTo(indexOfSlash, j);
 				j++;
 				break;	
 			}
 		}
 		
+		if(word.charAt(j - 1) == '\\')
+			storeFromTo(indexOfSlash, j - 1);
+		
 		return j;
 	}
 
 	public void storeFromTo(int i, int j) {
-		
-		
+		for(int k = i; k <= j; k++)
+			store(k);
 	}
 	
 	

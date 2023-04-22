@@ -41,32 +41,32 @@ class TestClass {
 	}
 
 	@Test
-	void shouldGetIndexOneIfSlashThenChar() {
+	void shouldGetIndexTwoIfSlashThenChar() {
 		
 		Unsplicer unsplicer = new Unsplicer("\\a");
 		
 		assertEquals(2, unsplicer.resolveSlash(0));
 	}
 	
-	@DisplayName ("FALSE POSITIVE : UNIMPLEMENTED")
 	@Test
 	void shouldNotStoreIfSlashAndNewline() {
 		
-		Unsplicer unsplicer = new Unsplicer("\\\n");
 		Vector<Character> expected = new Vector<Character>();	
 		
+		Unsplicer unsplicer = new Unsplicer("\\\n");
 		unsplicer.resolveSlash(0);
 		
 		assertEquals(expected, unsplicer.getResult());
 	}
 	
 	@Test
-	void shouldStoreOneSlash() {
+	void shouldStoreTwoSlashes() {
 		
-		Unsplicer unsplicer = new Unsplicer("\\");
 		Vector<Character> expected = new Vector<Character>();	
 		expected.add('\\');
+		expected.add('\\');
 		
+		Unsplicer unsplicer = new Unsplicer("\\\\");
 		unsplicer.resolveSlash(0);
 		
 		assertEquals(expected, unsplicer.getResult());
@@ -75,11 +75,11 @@ class TestClass {
 	@Test
 	void shouldStoreSlashAndChar() {
 		
-		Unsplicer unsplicer = new Unsplicer("\\a");
 		Vector<Character> expected = new Vector<Character>();	
 		expected.add('\\');
 		expected.add('a');
 		
+		Unsplicer unsplicer = new Unsplicer("\\a");
 		unsplicer.resolveSlash(0);
 		
 		assertEquals(expected, unsplicer.getResult());
@@ -88,11 +88,11 @@ class TestClass {
 	@Test
 	void shouldStoreZerothAndFirstChar() {
 		
-		Unsplicer unsplicer = new Unsplicer("abc");
 		Vector<Character> expected = new Vector<Character>();	
 		expected.add('a');
 		expected.add('b');
 		
+		Unsplicer unsplicer = new Unsplicer("abc");
 		unsplicer.storeFromTo(0, 1);
 		
 		assertEquals(expected, unsplicer.getResult());
