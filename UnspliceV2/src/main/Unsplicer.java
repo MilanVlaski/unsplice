@@ -48,10 +48,12 @@ public class Unsplicer {
 				j++;
 				break;	
 			}
+			else if (j == word.length() - 1) {
+				storeFromTo(indexOfSlash, j);
+				j++;
+				break;
+			}
 		}
-		
-		if(word.charAt(j - 1) == '\\')
-			storeFromTo(indexOfSlash, j - 1);
 		
 		return j;
 	}
