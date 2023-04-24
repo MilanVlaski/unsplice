@@ -33,7 +33,7 @@ public class Unsplicer {
 				j++;
 				break;
 			}	
-			else if(Character.isAlphabetic(word.charAt(j))) {
+			else if(Character.isAlphabetic(word.charAt(j) ) || Character.isDigit(word.charAt(j))) {
 				storeFromTo(indexOfSlash, j);
 				j++;
 				break;	
