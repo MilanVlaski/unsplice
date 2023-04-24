@@ -96,6 +96,6 @@ class TestClass {
 		unsplicer.storeFromTo(0, 1);
 		
 		assertEquals(expected, unsplicer.getResult());
-		
 	}
+	
 }

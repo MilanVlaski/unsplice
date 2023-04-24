@@ -9,30 +9,20 @@ public class Unsplicer {
 	List<Character> result;
 	
 	public Unsplicer(String word) {
-		
 		this.word = word;
 		this.result = new Vector<Character>();
 	}
-	
-	public String getWord() {
-		return word;
-	}
-	public void setWord(String word) {
-		this.word = word;
-	}
-
 
 	public List<Character> getResult() {
 		return result;
-	}
-	public void setResult(List<Character> result) {
-		this.result = result;
 	}
 	
 	public void store(int i) {
 		this.result.add(word.charAt(i));
 	}
-	
+	//Given position of slash in word, stores or doesn't store
+	//the appropriate characters. Returns and index from which you can
+	//continue parsing
 	public int resolveSlash(int indexOfSlash) {
 		
 		int j;
@@ -57,7 +47,7 @@ public class Unsplicer {
 		
 		return j;
 	}
-
+	//Stores chars from position i to position j, including i and j
 	public void storeFromTo(int i, int j) {
 		for(int k = i; k <= j; k++)
 			store(k);
