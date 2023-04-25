@@ -29,7 +29,7 @@ class TestClass {
 		
 		Unsplicer unsplicer = new Unsplicer("\\\n");
 		
-		assertEquals(2, unsplicer.resolveSlash(0));
+		assertEquals(1, unsplicer.resolveSlash(0));
 	}
 	
 	@Test
@@ -37,7 +37,7 @@ class TestClass {
 		
 		Unsplicer unsplicer = new Unsplicer("\\\\");
 		
-		assertEquals(2, unsplicer.resolveSlash(0));
+		assertEquals(1, unsplicer.resolveSlash(0));
 	}
 
 	@Test
@@ -45,7 +45,7 @@ class TestClass {
 		
 		Unsplicer unsplicer = new Unsplicer("\\a");
 		
-		assertEquals(2, unsplicer.resolveSlash(0));
+		assertEquals(1, unsplicer.resolveSlash(0));
 	}
 	
 	@Test

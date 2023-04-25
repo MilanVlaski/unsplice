@@ -30,17 +30,14 @@ public class Unsplicer {
 		for(j = indexOfSlash ; j < word.length(); j++) {
 			
 			if(word.charAt(j) == '\n') {
-				j++;
 				break;
-			}	
+			}
 			else if(Character.isAlphabetic(word.charAt(j) ) || Character.isDigit(word.charAt(j))) {
 				storeFromTo(indexOfSlash, j);
-				j++;
 				break;	
 			}
 			else if (j == word.length() - 1) {
 				storeFromTo(indexOfSlash, j);
-				j++;
 				break;
 			}
 		}
@@ -57,12 +54,13 @@ public class Unsplicer {
 		
 		int i = 0;
 		while(i < word.length()){
+			
 			if(word.charAt(i) == '\\')
 				i = resolveSlash(i);
-			else {
+			else
 				store(i);
-				i++;
-			}
+			
+			i++;
 		}
 		
 		StringBuilder sb = new StringBuilder();
