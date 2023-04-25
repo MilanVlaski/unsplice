@@ -98,4 +98,27 @@ class TestClass {
 		assertEquals(expected, unsplicer.getResult());
 	}
 	
+	@Test
+	void shouldNotUnspliceOneSlash() {
+		
+		Unsplicer unsplicer = new Unsplicer("a\\b");
+		
+		assertEquals("a\\b", unsplicer.unsplice());
+	}
+	
+	@Test
+	void shouldUnspliceOneSlashAndNewline() {
+		
+		Unsplicer unsplicer = new Unsplicer("a\\\nb");
+		
+		assertEquals("ab", unsplicer.unsplice());
+	}
+	
+	@Test
+	void shouldNotUnspliceLettersAndDigits() {
+		
+		Unsplicer unsplicer = new Unsplicer("a1b2c3");
+		
+		assertEquals("a1b2c3", unsplicer.unsplice());
+	}
 }

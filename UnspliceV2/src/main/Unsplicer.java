@@ -52,6 +52,26 @@ public class Unsplicer {
 		for(int k = i; k <= j; k++)
 			store(k);
 	}
+
+	public String unsplice() {
+		
+		int i = 0;
+		while(i < word.length()){
+			if(word.charAt(i) == '\\')
+				i = resolveSlash(i);
+			else {
+				store(i);
+				i++;
+			}
+		}
+		
+		StringBuilder sb = new StringBuilder();
+		for (Character c : result)
+			sb.append(c);
+		
+		
+		return sb.toString();
+	}
 	
 	
 }
